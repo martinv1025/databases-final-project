@@ -35,7 +35,7 @@ public class JobApplication {
             description = randomTitleDoc.getString("description");
 
             // Assign rejection email header
-            AggregateIterable<Document> randomEmailDocs = jobCollection.aggregate(Arrays.asList(Aggregates.sample(1)));
+            AggregateIterable<Document> randomEmailDocs = rejectionEmailCollection.aggregate(Arrays.asList(Aggregates.sample(1)));
             Document randomEmailDoc = randomEmailDocs.first();
             email = new Email(randomEmailDoc.getString("rej_subj_text"));
 
