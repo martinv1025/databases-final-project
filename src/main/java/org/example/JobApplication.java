@@ -57,11 +57,6 @@ public class JobApplication {
                 }
                 questions.add(question);
             }
-
-            // find one document with new Document
-            Document student1 = jobCollection.find(new Document("student_id", 10000)).first();
-            String testStringValue = student1.getString("teststring");
-            System.out.println("Student 1 teststring: " + testStringValue);
         }
     }
 
